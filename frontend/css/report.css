@@ -1,0 +1,228 @@
+/* Drosia Executive Intelligence Report Preview & Print Styling */
+
+.report-document-container {
+  background: #0d131f;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--text-main);
+  position: relative;
+}
+
+.report-classification-banner {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ff6b7a;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+}
+
+.report-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--border-medium);
+  padding-bottom: 20px;
+}
+
+.report-title-area h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 4px;
+}
+
+.report-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.report-meta-grid span strong {
+  color: var(--text-muted);
+}
+
+.report-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.report-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cyan-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-left: 3px solid var(--cyan-primary);
+  padding-left: 10px;
+}
+
+.report-narrative {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* Evidence Figures in Report */
+.report-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.report-evidence-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-evidence-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.report-evidence-caption {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.evidence-caption-title {
+  font-weight: 600;
+  color: var(--text-pure);
+}
+
+.evidence-caption-meta {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+/* Methodology & Limitation Disclaimer Box */
+.report-disclaimer-box {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.disclaimer-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--amber-warning);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.disclaimer-text {
+  font-size: 12px;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+/* Approval & Sign-off Block */
+.report-signoff-block {
+  border-top: 1px dashed var(--border-medium);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+
+.signoff-seal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--emerald-success);
+}
+
+/* Print Styles for Flawless PDF Export */
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .header-hud, .sidebar-hud, .report-actions-bar, .modal-overlay {
+    display: none !important;
+  }
+
+  .app-container {
+    height: auto !important;
+  }
+
+  .main-viewport {
+    overflow: visible !important;
+  }
+
+  .report-document-container {
+    background: #fff !important;
+    color: #111 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .report-classification-banner {
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+    border-color: #f87171 !important;
+  }
+
+  .report-title-area h2 {
+    color: #000 !important;
+  }
+
+  .report-section-title {
+    color: #0284c7 !important;
+    border-left-color: #0284c7 !important;
+  }
+
+  .report-narrative {
+    color: #334155 !important;
+  }
+
+  .report-disclaimer-box {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #f59e0b !important;
+  }
+
+  .report-evidence-card {
+    border-color: #cbd5e1 !important;
+    background: #f8fafc !important;
+  }
+
+  .evidence-caption-title {
+    color: #000 !important;
+  }
+}

@@ -1,0 +1,69 @@
+/* Drosia Tactical Aerospace Design System — Variables & Tokens */
+:root {
+  /* Color Palette - Deep Obsidian Tactical Dark */
+  --bg-base: #070a10;
+  --bg-surface: #0c121d;
+  --bg-surface-elevated: #111a29;
+  --bg-surface-glass: rgba(12, 18, 29, 0.78);
+  --bg-card: rgba(17, 26, 41, 0.65);
+  --bg-card-hover: rgba(23, 35, 56, 0.85);
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-glow-cyan: rgba(0, 240, 255, 0.35);
+  --border-glow-amber: rgba(245, 158, 11, 0.35);
+
+  /* Primary Accents */
+  --cyan-primary: #00f0ff;
+  --cyan-hover: #38f4ff;
+  --cyan-subtle: rgba(0, 240, 255, 0.12);
+  --cyan-glow: 0 0 20px rgba(0, 240, 255, 0.25);
+
+  --blue-primary: #3b82f6;
+  --blue-subtle: rgba(59, 130, 246, 0.12);
+
+  --emerald-success: #10b981;
+  --emerald-subtle: rgba(16, 185, 129, 0.14);
+  --emerald-glow: 0 0 16px rgba(16, 185, 129, 0.25);
+
+  --amber-warning: #f59e0b;
+  --amber-subtle: rgba(245, 158, 11, 0.14);
+
+  --crimson-threat: #ef4444;
+  --crimson-subtle: rgba(239, 68, 68, 0.16);
+  --crimson-glow: 0 0 20px rgba(239, 68, 68, 0.35);
+
+  --purple-intel: #a855f7;
+  --purple-subtle: rgba(168, 85, 247, 0.14);
+
+  /* Typography Colors */
+  --text-pure: #ffffff;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-cyan: #00f0ff;
+
+  /* Fonts */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shadows & Glass */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
+  --glass-blur: blur(16px);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+}

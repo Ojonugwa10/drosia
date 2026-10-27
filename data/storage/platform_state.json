@@ -1,0 +1,1628 @@
+{
+  "organization": {
+    "id": "org-mos-001",
+    "name": "MOS Datahub Security Solutions",
+    "status": "Active",
+    "jurisdiction": "Federal Republic of Nigeria / West Africa",
+    "created_at": "2026-07-29T03:28:01.489671+00:00"
+  },
+  "users": [
+    {
+      "id": "usr-admin-01",
+      "organization_id": "org-mos-001",
+      "display_name": "Babatunde Adeleke",
+      "email": "b.adeleke@mosdatahub.ng",
+      "role": "org_admin",
+      "status": "Active",
+      "title": "Organization Administrator"
+    },
+    {
+      "id": "usr-ops-02",
+      "organization_id": "org-mos-001",
+      "display_name": "Chukwuma Eze",
+      "email": "c.eze@mosdatahub.ng",
+      "role": "ops_manager",
+      "status": "Active",
+      "title": "Head of Operations"
+    },
+    {
+      "id": "usr-pilot-03",
+      "organization_id": "org-mos-001",
+      "display_name": "Capt. Fatima Al-Hassan",
+      "email": "f.alhassan@mosdatahub.ng",
+      "role": "pilot",
+      "status": "Active",
+      "title": "Senior Drone Pilot (RPAS Lic #NG-842)"
+    },
+    {
+      "id": "usr-analyst-04",
+      "organization_id": "org-mos-001",
+      "display_name": "Kelechi Nwosu",
+      "email": "k.nwosu@mosdatahub.ng",
+      "role": "analyst",
+      "status": "Active",
+      "title": "Senior GIS & Intelligence Analyst"
+    },
+    {
+      "id": "usr-sup-05",
+      "organization_id": "org-mos-001",
+      "display_name": "Major Daniel Okafor (Rtd)",
+      "email": "d.okafor@mosdatahub.ng",
+      "role": "supervisor",
+      "status": "Active",
+      "title": "Perimeter Security Supervisor"
+    },
+    {
+      "id": "usr-maint-06",
+      "organization_id": "org-mos-001",
+      "display_name": "Ibrahim Musa",
+      "email": "i.musa@mosdatahub.ng",
+      "role": "maintenance",
+      "status": "Active",
+      "title": "Fleet Maintenance Specialist"
+    },
+    {
+      "id": "usr-appr-07",
+      "organization_id": "org-mos-001",
+      "display_name": "Amina Bello",
+      "email": "a.bello@mosdatahub.ng",
+      "role": "approver",
+      "status": "Active",
+      "title": "Director of Security Compliance & Reporting"
+    },
+    {
+      "id": "usr-audit-08",
+      "organization_id": "org-mos-001",
+      "display_name": "Dr. Oladipo Johnson",
+      "email": "o.johnson@mosdatahub.ng",
+      "role": "auditor",
+      "status": "Active",
+      "title": "Independent Security & Compliance Auditor"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-lekki-01",
+      "organization_id": "org-mos-001",
+      "name": "Lekki Deepwater Port Perimeter & Access Recon",
+      "project_type": "Port & Maritime Security",
+      "sensitivity_level": "Official Sensitive",
+      "retention_days": 365,
+      "operating_area": "Lekki Free Trade Zone, Lagos State, Nigeria",
+      "center": [
+        6.4253,
+        3.8614
+      ],
+      "created_at": "2026-08-28T03:28:01.489671+00:00"
+    },
+    {
+      "id": "proj-tnp-02",
+      "organization_id": "org-mos-001",
+      "name": "Trans-Niger Pipeline Sector 7 Right-of-Way Recon",
+      "project_type": "Pipeline Reconnaissance",
+      "sensitivity_level": "Confidential",
+      "retention_days": 730,
+      "operating_area": "Niger Delta Basin Sector 7 Corridor, Rivers State",
+      "center": [
+        4.8156,
+        7.0498
+      ],
+      "created_at": "2026-09-12T03:28:01.489671+00:00"
+    },
+    {
+      "id": "proj-kano-03",
+      "organization_id": "org-mos-001",
+      "name": "Kano Kumbotso Solar Farm Critical Perimeter",
+      "project_type": "Critical Infrastructure Protection",
+      "sensitivity_level": "Official Sensitive",
+      "retention_days": 365,
+      "operating_area": "Kumbotso Industrial Corridor, Kano State",
+      "center": [
+        11.8902,
+        8.5124
+      ],
+      "created_at": "2026-10-07T03:28:01.489671+00:00"
+    }
+  ],
+  "assets": [
+    {
+      "id": "ast-m300-01",
+      "organization_id": "org-mos-001",
+      "asset_code": "UAV-M300-RTK-01",
+      "manufacturer": "DJI Enterprise",
+      "model": "Matrice 300 RTK",
+      "asset_type": "Heavy Multirotor UAV",
+      "serial_reference": "1581F-NG-0914",
+      "status": "Active",
+      "total_flight_hours": 142.8,
+      "last_service_date": "2026-10-15"
+    },
+    {
+      "id": "ast-m3t-02",
+      "organization_id": "org-mos-001",
+      "asset_code": "UAV-M3T-THERMAL-02",
+      "manufacturer": "DJI Enterprise",
+      "model": "Mavic 3 Thermal",
+      "asset_type": "Compact FLIR Recon UAV",
+      "serial_reference": "3MVT-NG-4482",
+      "status": "Active",
+      "total_flight_hours": 98.4,
+      "last_service_date": "2026-10-09"
+    },
+    {
+      "id": "ast-evo-03",
+      "organization_id": "org-mos-001",
+      "asset_code": "UAV-EVO2-SEC-03",
+      "manufacturer": "Autel Robotics",
+      "model": "EVO II Dual 640T",
+      "asset_type": "Rapid Response UAV",
+      "serial_reference": "EVO-NG-1120",
+      "status": "Inspection Required",
+      "total_flight_hours": 215.1,
+      "last_service_date": "2026-09-17"
+    }
+  ],
+  "missions": [
+    {
+      "id": "msn-lekki-041",
+      "project_id": "proj-lekki-01",
+      "mission_code": "MSN-LK-2026-041",
+      "mission_type": "Perimeter Surveillance",
+      "objective": "Routine twilight security surveillance of south gate, western fence, and cargo boundary.",
+      "planned_start_at": "2026-10-27T00:28:01.489671+00:00",
+      "actual_start_at": "2026-10-27T00:32:01.489671+00:00",
+      "actual_end_at": "2026-10-27T01:14:01.489671+00:00",
+      "assigned_pilot_id": "usr-pilot-03",
+      "assigned_pilot_name": "Capt. Fatima Al-Hassan",
+      "asset_id": "ast-m300-01",
+      "asset_code": "UAV-M300-RTK-01",
+      "planned_route_waypoints": [
+        {
+          "wp_id": 1,
+          "latitude": 6.421,
+          "longitude": 3.858,
+          "altitude_m": 120.0,
+          "name": "WP-1 Gate Access South"
+        },
+        {
+          "wp_id": 2,
+          "latitude": 6.426,
+          "longitude": 3.859,
+          "altitude_m": 120.0,
+          "name": "WP-2 Western Boundary Fence"
+        },
+        {
+          "wp_id": 3,
+          "latitude": 6.431,
+          "longitude": 3.862,
+          "altitude_m": 120.0,
+          "name": "WP-3 North Cargo Checkpoint"
+        },
+        {
+          "wp_id": 4,
+          "latitude": 6.429,
+          "longitude": 3.868,
+          "altitude_m": 120.0,
+          "name": "WP-4 Eastern Perimeter Berm"
+        },
+        {
+          "wp_id": 5,
+          "latitude": 6.423,
+          "longitude": 3.866,
+          "altitude_m": 120.0,
+          "name": "WP-5 Coastal Berm Patrol"
+        },
+        {
+          "wp_id": 6,
+          "latitude": 6.421,
+          "longitude": 3.858,
+          "altitude_m": 120.0,
+          "name": "WP-6 Return to South Gate"
+        }
+      ],
+      "status": "Completed",
+      "created_by": "usr-ops-02",
+      "created_at": "2026-10-25T03:28:01.489671+00:00"
+    },
+    {
+      "id": "msn-tnp-088",
+      "project_id": "proj-tnp-02",
+      "mission_code": "MSN-TNP-2026-088",
+      "mission_type": "Pipeline Reconnaissance",
+      "objective": "High-resolution thermal infrared inspection along KP 42-58 right-of-way corridor.",
+      "planned_start_at": "2026-10-26T20:28:01.489671+00:00",
+      "actual_start_at": "2026-10-26T20:26:01.489671+00:00",
+      "actual_end_at": "2026-10-26T21:18:01.489671+00:00",
+      "assigned_pilot_id": "usr-pilot-03",
+      "assigned_pilot_name": "Capt. Fatima Al-Hassan",
+      "asset_id": "ast-m3t-02",
+      "asset_code": "UAV-M3T-THERMAL-02",
+      "planned_route_waypoints": [
+        {
+          "wp_id": 1,
+          "latitude": 4.81,
+          "longitude": 7.042,
+          "altitude_m": 80.0,
+          "name": "KP 42 Valve Station"
+        },
+        {
+          "wp_id": 2,
+          "latitude": 4.818,
+          "longitude": 7.051,
+          "altitude_m": 80.0,
+          "name": "KP 48 Swamp Crossing"
+        },
+        {
+          "wp_id": 3,
+          "latitude": 4.825,
+          "longitude": 7.062,
+          "altitude_m": 80.0,
+          "name": "KP 58 Manifold Station"
+        }
+      ],
+      "status": "Completed",
+      "created_by": "usr-ops-02",
+      "created_at": "2026-10-26T03:28:01.489671+00:00"
+    },
+    {
+      "id": "msn-kno-015",
+      "project_id": "proj-kano-03",
+      "mission_code": "MSN-KNO-2026-015",
+      "mission_type": "Critical Infrastructure Protection",
+      "objective": "Perimeter intrusion detection sweep around high-voltage inverter stations.",
+      "planned_start_at": "2026-10-27T03:28:01.489671+00:00",
+      "actual_start_at": "2026-10-27T03:28:01.489671+00:00",
+      "actual_end_at": null,
+      "assigned_pilot_id": "usr-pilot-03",
+      "assigned_pilot_name": "Capt. Fatima Al-Hassan",
+      "asset_id": "ast-m300-01",
+      "asset_code": "UAV-M300-RTK-01",
+      "planned_route_waypoints": [],
+      "status": "In Progress",
+      "created_by": "usr-ops-02",
+      "created_at": "2026-10-27T03:28:01.489671+00:00"
+    }
+  ],
+  "telemetry_points": [
+    {
+      "id": "tel-0001",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:32:01.489671+00:00",
+      "latitude": 6.421,
+      "longitude": 3.858,
+      "altitude_value": 118.0,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 0.0,
+      "battery_level": 98.0,
+      "source_record_id": "rec-0001"
+    },
+    {
+      "id": "tel-0002",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:32:41.489671+00:00",
+      "latitude": 6.421417,
+      "longitude": 3.858083,
+      "altitude_value": 118.3,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 6.0,
+      "battery_level": 97.5,
+      "source_record_id": "rec-0002"
+    },
+    {
+      "id": "tel-0003",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:33:21.489671+00:00",
+      "latitude": 6.421833,
+      "longitude": 3.858167,
+      "altitude_value": 118.7,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 12.0,
+      "battery_level": 96.9,
+      "source_record_id": "rec-0003"
+    },
+    {
+      "id": "tel-0004",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:34:01.489671+00:00",
+      "latitude": 6.42225,
+      "longitude": 3.85825,
+      "altitude_value": 119.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 18.0,
+      "battery_level": 96.3,
+      "source_record_id": "rec-0004"
+    },
+    {
+      "id": "tel-0005",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:34:41.489671+00:00",
+      "latitude": 6.422667,
+      "longitude": 3.858333,
+      "altitude_value": 119.3,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 24.0,
+      "battery_level": 95.8,
+      "source_record_id": "rec-0005"
+    },
+    {
+      "id": "tel-0006",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:35:21.489671+00:00",
+      "latitude": 6.423083,
+      "longitude": 3.858417,
+      "altitude_value": 119.7,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 30.0,
+      "battery_level": 95.2,
+      "source_record_id": "rec-0006"
+    },
+    {
+      "id": "tel-0007",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:36:01.489671+00:00",
+      "latitude": 6.4235,
+      "longitude": 3.8585,
+      "altitude_value": 120.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 36.0,
+      "battery_level": 94.7,
+      "source_record_id": "rec-0007"
+    },
+    {
+      "id": "tel-0008",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:36:41.489671+00:00",
+      "latitude": 6.423917,
+      "longitude": 3.858583,
+      "altitude_value": 120.2,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 42.0,
+      "battery_level": 94.2,
+      "source_record_id": "rec-0008"
+    },
+    {
+      "id": "tel-0009",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:37:21.489671+00:00",
+      "latitude": 6.424333,
+      "longitude": 3.858667,
+      "altitude_value": 120.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 48.0,
+      "battery_level": 93.6,
+      "source_record_id": "rec-0009"
+    },
+    {
+      "id": "tel-0010",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:38:01.489671+00:00",
+      "latitude": 6.42475,
+      "longitude": 3.85875,
+      "altitude_value": 120.8,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 54.0,
+      "battery_level": 93.0,
+      "source_record_id": "rec-0010"
+    },
+    {
+      "id": "tel-0011",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:38:41.489671+00:00",
+      "latitude": 6.425167,
+      "longitude": 3.858833,
+      "altitude_value": 121.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 60.0,
+      "battery_level": 92.5,
+      "source_record_id": "rec-0011"
+    },
+    {
+      "id": "tel-0012",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:39:21.489671+00:00",
+      "latitude": 6.425583,
+      "longitude": 3.858917,
+      "altitude_value": 121.2,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 66.0,
+      "battery_level": 92.0,
+      "source_record_id": "rec-0012"
+    },
+    {
+      "id": "tel-0013",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:40:01.489671+00:00",
+      "latitude": 6.426,
+      "longitude": 3.859,
+      "altitude_value": 121.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 72.0,
+      "battery_level": 91.4,
+      "source_record_id": "rec-0013"
+    },
+    {
+      "id": "tel-0014",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:40:41.489671+00:00",
+      "latitude": 6.426417,
+      "longitude": 3.85925,
+      "altitude_value": 121.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 78.0,
+      "battery_level": 90.8,
+      "source_record_id": "rec-0014"
+    },
+    {
+      "id": "tel-0015",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:41:21.489671+00:00",
+      "latitude": 6.426833,
+      "longitude": 3.8595,
+      "altitude_value": 120.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 84.0,
+      "battery_level": 90.3,
+      "source_record_id": "rec-0015"
+    },
+    {
+      "id": "tel-0016",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:42:01.489671+00:00",
+      "latitude": 6.42725,
+      "longitude": 3.85975,
+      "altitude_value": 120.5,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 90.0,
+      "battery_level": 89.8,
+      "source_record_id": "rec-0016"
+    },
+    {
+      "id": "tel-0017",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:42:41.489671+00:00",
+      "latitude": 6.427667,
+      "longitude": 3.86,
+      "altitude_value": 120.2,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 96.0,
+      "battery_level": 89.2,
+      "source_record_id": "rec-0017"
+    },
+    {
+      "id": "tel-0018",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:43:21.489671+00:00",
+      "latitude": 6.428083,
+      "longitude": 3.86025,
+      "altitude_value": 119.8,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 102.0,
+      "battery_level": 88.7,
+      "source_record_id": "rec-0018"
+    },
+    {
+      "id": "tel-0019",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:44:01.489671+00:00",
+      "latitude": 6.4285,
+      "longitude": 3.8605,
+      "altitude_value": 119.5,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 108.0,
+      "battery_level": 88.1,
+      "source_record_id": "rec-0019"
+    },
+    {
+      "id": "tel-0020",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:44:41.489671+00:00",
+      "latitude": 6.428917,
+      "longitude": 3.86075,
+      "altitude_value": 119.6,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 114.0,
+      "battery_level": 87.5,
+      "source_record_id": "rec-0020"
+    },
+    {
+      "id": "tel-0021",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:45:21.489671+00:00",
+      "latitude": 6.429333,
+      "longitude": 3.861,
+      "altitude_value": 119.7,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 120.0,
+      "battery_level": 87.0,
+      "source_record_id": "rec-0021"
+    },
+    {
+      "id": "tel-0022",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:46:01.489671+00:00",
+      "latitude": 6.42975,
+      "longitude": 3.86125,
+      "altitude_value": 119.8,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 126.0,
+      "battery_level": 86.5,
+      "source_record_id": "rec-0022"
+    },
+    {
+      "id": "tel-0023",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:46:41.489671+00:00",
+      "latitude": 6.430167,
+      "longitude": 3.8615,
+      "altitude_value": 119.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 132.0,
+      "battery_level": 85.9,
+      "source_record_id": "rec-0023"
+    },
+    {
+      "id": "tel-0024",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:47:21.489671+00:00",
+      "latitude": 6.430583,
+      "longitude": 3.86175,
+      "altitude_value": 119.9,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 138.0,
+      "battery_level": 85.3,
+      "source_record_id": "rec-0024"
+    },
+    {
+      "id": "tel-0025",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:48:01.489671+00:00",
+      "latitude": 6.431,
+      "longitude": 3.862,
+      "altitude_value": 120.0,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 144.0,
+      "battery_level": 84.8,
+      "source_record_id": "rec-0025"
+    },
+    {
+      "id": "tel-0026",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:48:41.489671+00:00",
+      "latitude": 6.430833,
+      "longitude": 3.8625,
+      "altitude_value": 120.3,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 150.0,
+      "battery_level": 84.2,
+      "source_record_id": "rec-0026"
+    },
+    {
+      "id": "tel-0027",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:49:21.489671+00:00",
+      "latitude": 6.430667,
+      "longitude": 3.863,
+      "altitude_value": 120.7,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 156.0,
+      "battery_level": 83.7,
+      "source_record_id": "rec-0027"
+    },
+    {
+      "id": "tel-0028",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:50:01.489671+00:00",
+      "latitude": 6.4305,
+      "longitude": 3.8635,
+      "altitude_value": 121.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 162.0,
+      "battery_level": 83.2,
+      "source_record_id": "rec-0028"
+    },
+    {
+      "id": "tel-0029",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:50:41.489671+00:00",
+      "latitude": 6.430333,
+      "longitude": 3.864,
+      "altitude_value": 121.3,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 168.0,
+      "battery_level": 82.6,
+      "source_record_id": "rec-0029"
+    },
+    {
+      "id": "tel-0030",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:51:21.489671+00:00",
+      "latitude": 6.430167,
+      "longitude": 3.8645,
+      "altitude_value": 121.7,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 174.0,
+      "battery_level": 82.0,
+      "source_record_id": "rec-0030"
+    },
+    {
+      "id": "tel-0031",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:52:01.489671+00:00",
+      "latitude": 6.43,
+      "longitude": 3.865,
+      "altitude_value": 122.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 180.0,
+      "battery_level": 81.5,
+      "source_record_id": "rec-0031"
+    },
+    {
+      "id": "tel-0032",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:52:41.489671+00:00",
+      "latitude": 6.429833,
+      "longitude": 3.8655,
+      "altitude_value": 121.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 186.0,
+      "battery_level": 81.0,
+      "source_record_id": "rec-0032"
+    },
+    {
+      "id": "tel-0033",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:53:21.489671+00:00",
+      "latitude": 6.429667,
+      "longitude": 3.866,
+      "altitude_value": 121.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 192.0,
+      "battery_level": 80.4,
+      "source_record_id": "rec-0033"
+    },
+    {
+      "id": "tel-0034",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:54:01.489671+00:00",
+      "latitude": 6.4295,
+      "longitude": 3.8665,
+      "altitude_value": 121.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 198.0,
+      "battery_level": 79.8,
+      "source_record_id": "rec-0034"
+    },
+    {
+      "id": "tel-0035",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:54:41.489671+00:00",
+      "latitude": 6.429333,
+      "longitude": 3.867,
+      "altitude_value": 121.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 204.0,
+      "battery_level": 79.3,
+      "source_record_id": "rec-0035"
+    },
+    {
+      "id": "tel-0036",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:55:21.489671+00:00",
+      "latitude": 6.429167,
+      "longitude": 3.8675,
+      "altitude_value": 120.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 210.0,
+      "battery_level": 78.8,
+      "source_record_id": "rec-0036"
+    },
+    {
+      "id": "tel-0037",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:56:01.489671+00:00",
+      "latitude": 6.429,
+      "longitude": 3.868,
+      "altitude_value": 120.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 216.0,
+      "battery_level": 78.2,
+      "source_record_id": "rec-0037"
+    },
+    {
+      "id": "tel-0038",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:56:41.489671+00:00",
+      "latitude": 6.4285,
+      "longitude": 3.867833,
+      "altitude_value": 120.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 222.0,
+      "battery_level": 77.7,
+      "source_record_id": "rec-0038"
+    },
+    {
+      "id": "tel-0039",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:57:21.489671+00:00",
+      "latitude": 6.428,
+      "longitude": 3.867667,
+      "altitude_value": 120.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 228.0,
+      "battery_level": 77.1,
+      "source_record_id": "rec-0039"
+    },
+    {
+      "id": "tel-0040",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:58:01.489671+00:00",
+      "latitude": 6.4275,
+      "longitude": 3.8675,
+      "altitude_value": 119.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 234.0,
+      "battery_level": 76.5,
+      "source_record_id": "rec-0040"
+    },
+    {
+      "id": "tel-0041",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:58:41.489671+00:00",
+      "latitude": 6.427,
+      "longitude": 3.867333,
+      "altitude_value": 119.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 240.0,
+      "battery_level": 76.0,
+      "source_record_id": "rec-0041"
+    },
+    {
+      "id": "tel-0042",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T00:59:21.489671+00:00",
+      "latitude": 6.4265,
+      "longitude": 3.867167,
+      "altitude_value": 119.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 246.0,
+      "battery_level": 75.5,
+      "source_record_id": "rec-0042"
+    },
+    {
+      "id": "tel-0043",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:00:01.489671+00:00",
+      "latitude": 6.426,
+      "longitude": 3.867,
+      "altitude_value": 119.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 252.0,
+      "battery_level": 74.9,
+      "source_record_id": "rec-0043"
+    },
+    {
+      "id": "tel-0044",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:00:41.489671+00:00",
+      "latitude": 6.4255,
+      "longitude": 3.866833,
+      "altitude_value": 119.3,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 258.0,
+      "battery_level": 74.3,
+      "source_record_id": "rec-0044"
+    },
+    {
+      "id": "tel-0045",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:01:21.489671+00:00",
+      "latitude": 6.425,
+      "longitude": 3.866667,
+      "altitude_value": 119.7,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 264.0,
+      "battery_level": 73.8,
+      "source_record_id": "rec-0045"
+    },
+    {
+      "id": "tel-0046",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:02:01.489671+00:00",
+      "latitude": 6.4245,
+      "longitude": 3.8665,
+      "altitude_value": 120.0,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 270.0,
+      "battery_level": 73.2,
+      "source_record_id": "rec-0046"
+    },
+    {
+      "id": "tel-0047",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:02:41.489671+00:00",
+      "latitude": 6.424,
+      "longitude": 3.866333,
+      "altitude_value": 120.3,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 276.0,
+      "battery_level": 72.7,
+      "source_record_id": "rec-0047"
+    },
+    {
+      "id": "tel-0048",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:03:21.489671+00:00",
+      "latitude": 6.4235,
+      "longitude": 3.866167,
+      "altitude_value": 120.7,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 282.0,
+      "battery_level": 72.2,
+      "source_record_id": "rec-0048"
+    },
+    {
+      "id": "tel-0049",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:04:01.489671+00:00",
+      "latitude": 6.423,
+      "longitude": 3.866,
+      "altitude_value": 121.0,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 288.0,
+      "battery_level": 71.6,
+      "source_record_id": "rec-0049"
+    },
+    {
+      "id": "tel-0050",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:04:41.489671+00:00",
+      "latitude": 6.42275,
+      "longitude": 3.865333,
+      "altitude_value": 120.8,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 294.0,
+      "battery_level": 71.0,
+      "source_record_id": "rec-0050"
+    },
+    {
+      "id": "tel-0051",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:05:21.489671+00:00",
+      "latitude": 6.4225,
+      "longitude": 3.864667,
+      "altitude_value": 120.7,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 300.0,
+      "battery_level": 70.5,
+      "source_record_id": "rec-0051"
+    },
+    {
+      "id": "tel-0052",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:06:01.489671+00:00",
+      "latitude": 6.42225,
+      "longitude": 3.864,
+      "altitude_value": 120.5,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 306.0,
+      "battery_level": 70.0,
+      "source_record_id": "rec-0052"
+    },
+    {
+      "id": "tel-0053",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:06:41.489671+00:00",
+      "latitude": 6.422,
+      "longitude": 3.863333,
+      "altitude_value": 120.3,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 312.0,
+      "battery_level": 69.4,
+      "source_record_id": "rec-0053"
+    },
+    {
+      "id": "tel-0054",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:07:21.489671+00:00",
+      "latitude": 6.42175,
+      "longitude": 3.862667,
+      "altitude_value": 120.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 318.0,
+      "battery_level": 68.8,
+      "source_record_id": "rec-0054"
+    },
+    {
+      "id": "tel-0055",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:08:01.489671+00:00",
+      "latitude": 6.4215,
+      "longitude": 3.862,
+      "altitude_value": 120.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 324.0,
+      "battery_level": 68.3,
+      "source_record_id": "rec-0055"
+    },
+    {
+      "id": "tel-0056",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:08:41.489671+00:00",
+      "latitude": 6.421417,
+      "longitude": 3.861333,
+      "altitude_value": 119.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 330.0,
+      "battery_level": 67.8,
+      "source_record_id": "rec-0056"
+    },
+    {
+      "id": "tel-0057",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:09:21.489671+00:00",
+      "latitude": 6.421333,
+      "longitude": 3.860667,
+      "altitude_value": 119.5,
+      "altitude_reference": "AGL",
+      "speed_value": 7.5,
+      "heading": 336.0,
+      "battery_level": 67.2,
+      "source_record_id": "rec-0057"
+    },
+    {
+      "id": "tel-0058",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:10:01.489671+00:00",
+      "latitude": 6.42125,
+      "longitude": 3.86,
+      "altitude_value": 119.2,
+      "altitude_reference": "AGL",
+      "speed_value": 8.3,
+      "heading": 342.0,
+      "battery_level": 66.7,
+      "source_record_id": "rec-0058"
+    },
+    {
+      "id": "tel-0059",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:10:41.489671+00:00",
+      "latitude": 6.421167,
+      "longitude": 3.859333,
+      "altitude_value": 119.0,
+      "altitude_reference": "AGL",
+      "speed_value": 9.1,
+      "heading": 348.0,
+      "battery_level": 66.1,
+      "source_record_id": "rec-0059"
+    },
+    {
+      "id": "tel-0060",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "observed_at": "2026-10-27T01:11:21.489671+00:00",
+      "latitude": 6.421083,
+      "longitude": 3.858667,
+      "altitude_value": 118.8,
+      "altitude_reference": "AGL",
+      "speed_value": 9.9,
+      "heading": 354.0,
+      "battery_level": 65.5,
+      "source_record_id": "rec-0060"
+    }
+  ],
+  "flight_tracks": [
+    {
+      "id": "trk-lekki-041",
+      "mission_id": "msn-lekki-041",
+      "asset_id": "ast-m300-01",
+      "source_file_id": "file-flt-041",
+      "coordinate_reference_system": "EPSG:4326",
+      "start_at": "2026-10-27T00:32:01.489671+00:00",
+      "end_at": "2026-10-27T01:12:01.489671+00:00",
+      "total_distance_km": 4.82,
+      "max_speed_ms": 11.2,
+      "avg_speed_ms": 8.1,
+      "max_altitude_m": 122.0,
+      "track_geometry": [
+        [
+          3.858,
+          6.421,
+          118.0
+        ],
+        [
+          3.858083,
+          6.421417,
+          118.3
+        ],
+        [
+          3.858167,
+          6.421833,
+          118.7
+        ],
+        [
+          3.85825,
+          6.42225,
+          119.0
+        ],
+        [
+          3.858333,
+          6.422667,
+          119.3
+        ],
+        [
+          3.858417,
+          6.423083,
+          119.7
+        ],
+        [
+          3.8585,
+          6.4235,
+          120.0
+        ],
+        [
+          3.858583,
+          6.423917,
+          120.2
+        ],
+        [
+          3.858667,
+          6.424333,
+          120.5
+        ],
+        [
+          3.85875,
+          6.42475,
+          120.8
+        ],
+        [
+          3.858833,
+          6.425167,
+          121.0
+        ],
+        [
+          3.858917,
+          6.425583,
+          121.2
+        ],
+        [
+          3.859,
+          6.426,
+          121.5
+        ],
+        [
+          3.85925,
+          6.426417,
+          121.2
+        ],
+        [
+          3.8595,
+          6.426833,
+          120.8
+        ],
+        [
+          3.85975,
+          6.42725,
+          120.5
+        ],
+        [
+          3.86,
+          6.427667,
+          120.2
+        ],
+        [
+          3.86025,
+          6.428083,
+          119.8
+        ],
+        [
+          3.8605,
+          6.4285,
+          119.5
+        ],
+        [
+          3.86075,
+          6.428917,
+          119.6
+        ],
+        [
+          3.861,
+          6.429333,
+          119.7
+        ],
+        [
+          3.86125,
+          6.42975,
+          119.8
+        ],
+        [
+          3.8615,
+          6.430167,
+          119.8
+        ],
+        [
+          3.86175,
+          6.430583,
+          119.9
+        ],
+        [
+          3.862,
+          6.431,
+          120.0
+        ],
+        [
+          3.8625,
+          6.430833,
+          120.3
+        ],
+        [
+          3.863,
+          6.430667,
+          120.7
+        ],
+        [
+          3.8635,
+          6.4305,
+          121.0
+        ],
+        [
+          3.864,
+          6.430333,
+          121.3
+        ],
+        [
+          3.8645,
+          6.430167,
+          121.7
+        ],
+        [
+          3.865,
+          6.43,
+          122.0
+        ],
+        [
+          3.8655,
+          6.429833,
+          121.8
+        ],
+        [
+          3.866,
+          6.429667,
+          121.5
+        ],
+        [
+          3.8665,
+          6.4295,
+          121.2
+        ],
+        [
+          3.867,
+          6.429333,
+          121.0
+        ],
+        [
+          3.8675,
+          6.429167,
+          120.8
+        ],
+        [
+          3.868,
+          6.429,
+          120.5
+        ],
+        [
+          3.867833,
+          6.4285,
+          120.2
+        ],
+        [
+          3.867667,
+          6.428,
+          120.0
+        ],
+        [
+          3.8675,
+          6.4275,
+          119.8
+        ],
+        [
+          3.867333,
+          6.427,
+          119.5
+        ],
+        [
+          3.867167,
+          6.4265,
+          119.2
+        ],
+        [
+          3.867,
+          6.426,
+          119.0
+        ],
+        [
+          3.866833,
+          6.4255,
+          119.3
+        ],
+        [
+          3.866667,
+          6.425,
+          119.7
+        ],
+        [
+          3.8665,
+          6.4245,
+          120.0
+        ],
+        [
+          3.866333,
+          6.424,
+          120.3
+        ],
+        [
+          3.866167,
+          6.4235,
+          120.7
+        ],
+        [
+          3.866,
+          6.423,
+          121.0
+        ],
+        [
+          3.865333,
+          6.42275,
+          120.8
+        ],
+        [
+          3.864667,
+          6.4225,
+          120.7
+        ],
+        [
+          3.864,
+          6.42225,
+          120.5
+        ],
+        [
+          3.863333,
+          6.422,
+          120.3
+        ],
+        [
+          3.862667,
+          6.42175,
+          120.2
+        ],
+        [
+          3.862,
+          6.4215,
+          120.0
+        ],
+        [
+          3.861333,
+          6.421417,
+          119.8
+        ],
+        [
+          3.860667,
+          6.421333,
+          119.5
+        ],
+        [
+          3.86,
+          6.42125,
+          119.2
+        ],
+        [
+          3.859333,
+          6.421167,
+          119.0
+        ],
+        [
+          3.858667,
+          6.421083,
+          118.8
+        ]
+      ],
+      "data_quality_status": "Verified"
+    }
+  ],
+  "media_assets": [
+    {
+      "id": "med-ev01",
+      "mission_id": "msn-lekki-041",
+      "source_file_id": "file-img-001",
+      "original_filename": "DJI_20261026_1847_SECTOR_SOUTH_GATE.JPG",
+      "captured_at": "2026-10-27T00:46:01.489671+00:00",
+      "latitude": 6.4215,
+      "longitude": 3.8582,
+      "altitude_m": 120.0,
+      "media_type": "image/jpeg",
+      "sensor_type": "Optical 4K Zoom (48MP)",
+      "storage_path": "assets/images/perimeter_patrol_ev01.jpg",
+      "thumbnail_path": "assets/images/perimeter_patrol_ev01.jpg",
+      "integrity_status": "Verified (SHA-256 match)",
+      "metadata_json": {
+        "optical_zoom": "3.2x",
+        "shutter_speed": "1/250s",
+        "focal_length": "24mm",
+        "iso": 400,
+        "exif_gps_verified": true
+      }
+    },
+    {
+      "id": "med-ev02",
+      "mission_id": "msn-lekki-041",
+      "source_file_id": "file-img-002",
+      "original_filename": "FLIR_20261026_1854_THERMAL_CORRIDOR.JPG",
+      "captured_at": "2026-10-27T00:53:01.489671+00:00",
+      "latitude": 6.4285,
+      "longitude": 3.8605,
+      "altitude_m": 80.0,
+      "media_type": "image/jpeg",
+      "sensor_type": "FLIR Longwave IR (640x512)",
+      "storage_path": "assets/images/thermal_recon_ev02.jpg",
+      "thumbnail_path": "assets/images/thermal_recon_ev02.jpg",
+      "integrity_status": "Verified (SHA-256 match)",
+      "metadata_json": {
+        "palette": "White-Hot IR",
+        "temp_delta": "18.5 deg C",
+        "sensor_range_m": 250,
+        "exif_gps_verified": true
+      }
+    }
+  ],
+  "incidents": [
+    {
+      "id": "inc-001",
+      "project_id": "proj-lekki-01",
+      "mission_id": "msn-lekki-041",
+      "category": "Perimeter Breach",
+      "description": "Stationary light commercial vehicle parked outside designated gate holding bay without active clearance manifest. Visual inspection shows two individuals near perimeter wire.",
+      "observed_at": "2026-10-27T00:46:01.489671+00:00",
+      "latitude": 6.4215,
+      "longitude": 3.8582,
+      "altitude_m": 120.0,
+      "verification_status": "Verified Observation",
+      "severity": "High",
+      "created_by": "usr-pilot-03",
+      "created_at": "2026-10-27T00:48:01.489671+00:00",
+      "evidence_links": [
+        "med-ev01"
+      ]
+    },
+    {
+      "id": "inc-002",
+      "project_id": "proj-lekki-01",
+      "mission_id": "msn-lekki-041",
+      "category": "Thermal Anomaly",
+      "description": "Thermal hotspot detected adjacent to underground conduit run along western fence corridor. High temp delta (+18.5 C) relative to background earth.",
+      "observed_at": "2026-10-27T00:53:01.489671+00:00",
+      "latitude": 6.4285,
+      "longitude": 3.8605,
+      "altitude_m": 80.0,
+      "verification_status": "Confirmed Threat",
+      "severity": "Critical",
+      "created_by": "usr-pilot-03",
+      "created_at": "2026-10-27T00:55:01.489671+00:00",
+      "evidence_links": [
+        "med-ev02"
+      ]
+    },
+    {
+      "id": "inc-003",
+      "project_id": "proj-lekki-01",
+      "mission_id": "msn-lekki-041",
+      "category": "Suspicious Loitering",
+      "description": "Movement observed near eastern drainage culvert outside secondary chain-link barrier.",
+      "observed_at": "2026-10-27T01:02:01.489671+00:00",
+      "latitude": 6.423,
+      "longitude": 3.866,
+      "altitude_m": 121.0,
+      "verification_status": "Unverified",
+      "severity": "Medium",
+      "created_by": "usr-pilot-03",
+      "created_at": "2026-10-27T01:04:01.489671+00:00",
+      "evidence_links": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "fnd-001",
+      "analysis_run_id": "run-041-01",
+      "finding_type": "Perimeter Infiltration Vulnerability",
+      "summary": "Verified unauthorized vehicle presence observed at South Gate outer security boundary.",
+      "detailed_explanation": "Optical zoom sensor captured an unmanifested pickup truck parked at coordinate 6.4215 N, 3.8582 E at 18:47 UTC. The vehicle remained stationary for 14 minutes within 15 meters of the primary concrete barrier.",
+      "supporting_metrics": {
+        "proximity_to_fence_m": 14.8,
+        "dwell_time_min": 14.0,
+        "optical_confidence_score": 0.94
+      },
+      "evidence_ids": [
+        "med-ev01"
+      ],
+      "geographic_context": {
+        "latitude": 6.4215,
+        "longitude": 3.8582,
+        "sector": "South Gate Alpha"
+      },
+      "uncertainty_information": "High optical confidence; license plate obscured by dust angle.",
+      "data_quality_limitations": "Observation corroborated by 12 consecutive telemetry epochs.",
+      "verification_status": "Verified Observation",
+      "review_status": "Approved by Supervisor",
+      "created_at": "2026-10-27T01:13:01.489671+00:00"
+    },
+    {
+      "id": "fnd-002",
+      "analysis_run_id": "run-041-01",
+      "finding_type": "Subsurface Pipeline / Cable Thermal Hotspot",
+      "summary": "Confirmed critical thermal anomaly (+18.5 C delta) at Western Conduit Junction.",
+      "detailed_explanation": "FLIR thermal longwave infrared payload identified a 3.4-meter elongated surface heat signature. Temperature delta exceeds normal ambient by 18.5 deg C, indicating electrical overheating or unauthorized pipeline tapping attempt.",
+      "supporting_metrics": {
+        "temp_delta_c": 18.5,
+        "heat_footprint_length_m": 3.4,
+        "flir_gain_mode": "Auto High-Contrast"
+      },
+      "evidence_ids": [
+        "med-ev02"
+      ],
+      "geographic_context": {
+        "latitude": 6.4285,
+        "longitude": 3.8605,
+        "sector": "Western Pipeline Berm"
+      },
+      "uncertainty_information": "Thermal sensor calibrated within +/- 0.5 C.",
+      "data_quality_limitations": "Track coverage verified; ground sensor verification dispatch recommended.",
+      "verification_status": "Confirmed Threat",
+      "review_status": "Escalated for Priority Interdiction",
+      "created_at": "2026-10-27T01:16:01.489671+00:00"
+    }
+  ],
+  "review_actions": [],
+  "reports": [
+    {
+      "id": "rep-lekki-2026-001",
+      "project_id": "proj-lekki-01",
+      "report_title": "Lekki Port Twilight Surveillance & Threat Assessment Report",
+      "report_type": "Security Intelligence & Mission Summary",
+      "reporting_period_start": "2026-10-27T00:28:01.489671+00:00",
+      "reporting_period_end": "2026-10-27T01:28:01.489671+00:00",
+      "version_number": 1,
+      "status": "Review",
+      "analysis_run_id": "run-041-01",
+      "executive_summary": "Mission MSN-LK-2026-041 completed 94.2% patrol corridor coverage across 4.82 km of Lekki perimeter fence. Two actionable findings were recorded: one verified unauthorized vehicle near South Gate (Evidence MED-EV01) and one critical subterranean thermal anomaly along the Western conduit (Evidence MED-EV02). Ground interdiction team was alerted.",
+      "methodology_and_limitations": "Metrics calculated deterministically from UAV-M300-RTK-01 flight logs conforming to EPSG:4326. Patrol coverage denotes aircraft track presence; optical ground occlusion factors (trees/berms) documented.",
+      "findings_included": [
+        "fnd-001",
+        "fnd-002"
+      ],
+      "storage_key": "reports/rep_lekki_2026_001_v1.json",
+      "is_stale": false,
+      "approved_by": null,
+      "approved_by_name": null,
+      "approved_at": null,
+      "rejection_reason": null,
+      "created_by": "usr-ops-02",
+      "created_at": "2026-10-27T01:23:01.489671+00:00"
+    }
+  ],
+  "upload_batches": [],
+  "source_files": [],
+  "transformations": []
+}

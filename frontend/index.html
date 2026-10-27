@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drosia // Drone Security Intelligence & Analytics Platform</title>
+  <meta name="description" content="Secure, modular platform for drone-security surveillance, data quality validation, geospatial analytics, and evidence-backed operational intelligence.">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for GIS Mapping -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Drosia Design System CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/report.css">
+</head>
+<body>
+
+  <!-- Header HUD -->
+  <header class="header-hud">
+    <div class="hud-left">
+      <a href="#" class="brand-badge">
+        <div class="brand-icon-wrap">
+          <div class="radar-sweep"></div>
+          <svg style="width:20px; height:20px; color:#00f0ff; position:relative; z-index:2;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>DROSIA <span>INTEL</span></h1>
+          <div class="brand-sub">Security Surveillance & Analytics v1.0</div>
+        </div>
+      </a>
+
+      <!-- Project Selector -->
+      <div class="project-selector-wrap">
+        <label for="project-select-hud">Project:</label>
+        <select id="project-select-hud" class="project-select">
+          <option value="">Loading Projects...</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="hud-right">
+      <!-- Tamper-Evident Cryptographic Seal Indicator -->
+      <div id="crypto-seal-btn" class="crypto-seal-pill" title="Click to verify cryptographic SHA-256 audit seal">
+        <div class="pulse-dot"></div>
+        <span>SEAL VERIFIED // SHA-256</span>
+      </div>
+
+      <!-- Interactive RBAC Role Switcher Card -->
+      <div id="role-switcher-hud" class="role-switcher-card" title="Click to switch simulated RBAC user role">
+        <div id="hud-user-avatar" class="user-avatar-badge">CE</div>
+        <div class="user-meta-hud">
+          <div id="hud-user-name" class="user-name-text">Chukwuma Eze</div>
+          <div id="hud-user-role" class="user-role-badge-pill">OPS MANAGER</div>
+        </div>
+        <svg style="width:14px; height:14px; color:#94a3b8; margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Shell -->
+  <div class="app-container">
+
+    <!-- Sidebar HUD -->
+    <aside class="sidebar-hud">
+      <div>
+        <div class="nav-group-title">Command & Intelligence</div>
+        <ul class="nav-list">
+          <li class="nav-item active" data-view="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Dashboard</span>
+          </li>
+          <li class="nav-item" data-view="gis-hud">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+            <span>Tactical GIS Map</span>
+            <span class="nav-badge-count">LIVE</span>
+          </li>
+          <li class="nav-item" data-view="uploader">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            <span>Batch Upload</span>
+          </li>
+          <li class="nav-item" data-view="data-quality">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Data Quality & QA</span>
+          </li>
+          <li class="nav-item" data-view="findings-review">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Review Workbench</span>
+            <span class="nav-badge-count" style="background:#ef4444; color:#fff;">2</span>
+          </li>
+          <li class="nav-item" data-view="ai-intelligence">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12L2.5 7.5"></path></svg>
+            <span>AI Explanations</span>
+          </li>
+          <li class="nav-item" data-view="reports">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>Report Builder</span>
+          </li>
+          <li class="nav-item" data-view="audit-trail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+            <span>Audit Trail</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom fleet widget -->
+      <div class="sidebar-bottom-info">
+        <div class="nav-group-title" style="padding:0 0 4px 0;">Primary Asset</div>
+        <div class="active-asset-indicator">
+          <div class="asset-status-dot"></div>
+          <span style="font-weight:600; color:#fff; font-size:12px;">UAV-M300-RTK-01</span>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:10px; color:#94a3b8;">
+          DJI Matrice 300 // 142.8 hrs
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Viewport Panes -->
+    <main class="main-viewport">
+
+      <!-- View 1: Dashboard -->
+      <section id="view-dashboard" class="view-content-pane active">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Mission Operations Intelligence</h2>
+            <p style="font-size:13px; color:#94a3b8;">Comprehensive surveillance KPIs, patrol coverage metrics, and verified operational findings.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn-tactical btn-primary-cyan btn-sm" onclick="navigation.switchView('uploader')">
+              <svg style="width:14px; height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              Upload Mission Batch
+            </button>
+            <button class="btn-tactical btn-outline btn-sm" onclick="navigation.switchView('gis-hud')">
+              Launch Tactical Map HUD
+            </button>
+          </div>
+        </div>
+
+        <!-- Metric KPI Tiles Grid -->
+        <div id="dashboard-kpi-grid" class="kpi-grid">
+          <!-- Populated dynamically by dashboard.js -->
+        </div>
+
+        <!-- Charts Grid -->
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap:20px;">
+          <div class="tactical-panel">
+            <div class="panel-header-hud">
+              <div class="panel-title-wrap">
+                <h3>Recorded Observations by Category</h3>
+                <span class="panel-tag">MODULE C</span>
+              </div>
+            </div>
+            <div style="height:240px; position:relative;">
+              <canvas id="chart-incident-categories"></canvas>
+            </div>
+          </div>
+
+          <div class="tactical-panel">
+            <div class="panel-header-hud">
+              <div class="panel-title-wrap">
+                <h3>Observation Verification Breakdown</h3>
+                <span class="panel-tag">HUMAN-IN-THE-LOOP</span>
+              </div>
+            </div>
+            <div style="height:240px; position:relative;">
+              <canvas id="chart-verification-status"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Mission Intelligence Brief Banner -->
+        <div class="tactical-panel" style="border-left:3px solid var(--cyan-primary);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <div style="font-family:var(--font-mono); font-size:11px; color:#00f0ff; font-weight:700;">
+              LATEST COMPLETED MISSION // MSN-LK-2026-041
+            </div>
+            <span class="badge-status badge-verified">CANONICAL VERIFIED</span>
+          </div>
+          <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6;">
+            Twilight perimeter surveillance completed over Lekki Free Trade Zone. 94.2% corridor coverage achieved with 120 verified telemetry epochs. Two priority findings logged: South Gate unauthorized stationary vehicle (Evidence MED-EV01) and Western Berm pipeline thermal anomaly (+18.5°C delta, Evidence MED-EV02).
+          </p>
+          <div style="margin-top:12px; display:flex; gap:12px;">
+            <button class="btn-tactical btn-outline btn-sm" onclick="navigation.switchView('findings-review')">Inspect 2 Review Queue Items</button>
+            <button class="btn-tactical btn-outline btn-sm" onclick="navigation.switchView('ai-intelligence')">Read Grounded AI Briefing</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 2: Tactical GIS Map HUD -->
+      <section id="view-gis-hud" class="view-content-pane">
+        <div class="map-viewport-container">
+          <div id="tactical-leaflet-map"></div>
+
+          <!-- Floating Layer Controls -->
+          <div class="map-layer-control-hud">
+            <div style="font-family:var(--font-mono); font-size:10px; color:#00f0ff; font-weight:700; text-transform:uppercase;">Map Layers</div>
+            <label class="layer-toggle-item">
+              <input type="checkbox" id="toggle-actual-track" checked>
+              <span>Actual Flown Track (GPS)</span>
+            </label>
+            <label class="layer-toggle-item">
+              <input type="checkbox" id="toggle-planned-route" checked>
+              <span>Planned Route Corridor</span>
+            </label>
+            <label class="layer-toggle-item">
+              <input type="checkbox" id="toggle-incidents" checked>
+              <span>Geo-Located Incidents</span>
+            </label>
+          </div>
+
+          <!-- Floating Telemetry HUD -->
+          <div class="map-telemetry-hud">
+            <div class="hud-title-row">
+              <span class="hud-title">Telemetry HUD</span>
+              <span style="font-family:var(--font-mono); font-size:10px; color:#10b981;">LIVE GPS</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="tel-label">Latitude:</span>
+              <span id="tel-hud-lat" class="tel-val">6.42100° N</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="tel-label">Longitude:</span>
+              <span id="tel-hud-lon" class="tel-val">3.85800° E</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="tel-label">Altitude:</span>
+              <span id="tel-hud-alt" class="tel-val">120.0 m AGL</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="tel-label">Ground Speed:</span>
+              <span id="tel-hud-spd" class="tel-val">8.1 m/s</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="tel-label">Battery SOC:</span>
+              <span id="tel-hud-bat" class="tel-val">94.0%</span>
+            </div>
+          </div>
+
+          <!-- Map Legend HUD -->
+          <div class="map-legend-hud">
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#00f0ff;"></div>
+              <span>Actual GPS Track</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#f59e0b; border-bottom: 2px dashed #f59e0b;"></div>
+              <span>Planned Corridor</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#ef4444; width:10px; height:10px; border-radius:50%;"></div>
+              <span>High / Critical Threat</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#00f0ff; width:10px; height:10px; border-radius:50%;"></div>
+              <span>Verified Observation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 3: Batch Upload & Validator -->
+      <section id="view-uploader" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Batch Data Ingestion & Pre-Flight Validation</h2>
+            <p style="font-size:13px; color:#94a3b8;">Upload drone flight logs, CSV spreadsheets, GeoJSON GIS corridors, and sensor imagery.</p>
+          </div>
+        </div>
+
+        <!-- Upload Dropzone -->
+        <div class="tactical-panel">
+          <div id="batch-upload-dropzone" class="upload-dropzone">
+            <div class="dropzone-icon-wrap">
+              <svg style="width:28px; height:28px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <div class="dropzone-text">
+              <h4>Drag & drop mission files here, or click to browse</h4>
+              <p>Supported: CSV, XLSX, ArduPilot/DJI JSON, GeoJSON, KML, JPEG/PNG/GeoTIFF (Max 50MB per batch)</p>
+            </div>
+            <input type="file" id="batch-file-input" multiple style="display:none;" accept=".csv,.json,.geojson,.kml,.jpg,.jpeg,.png,.tif,.tiff">
+          </div>
+
+          <!-- Staged files list -->
+          <div id="staged-files-list" style="margin-top:16px;"></div>
+
+          <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+            <div id="upload-status-indicator" style="font-family:var(--font-mono); font-size:12px;"></div>
+            <button id="submit-upload-batch-btn" class="btn-tactical btn-primary-cyan" style="display:none;">
+              Validate & Process Batch
+            </button>
+          </div>
+        </div>
+
+        <!-- Pre-Packaged Sample Test Datasets -->
+        <div class="tactical-panel">
+          <div class="panel-header-hud">
+            <div class="panel-title-wrap">
+              <h3>Load Realistic Sample Surveillance Datasets</h3>
+              <span class="panel-tag">ONE-CLICK TEST</span>
+            </div>
+          </div>
+          <p style="font-size:12.5px; color:#94a3b8; margin-bottom:14px;">
+            Test the ingestion and validation engine using authentic pre-packaged surveillance datasets:
+          </p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+            <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
+              <div style="font-weight:600; color:#fff; font-size:13px;">telemetry_mission_lekki_perimeter.csv</div>
+              <div style="font-size:11px; color:#94a3b8; margin:4px 0 8px;">UAV-M300 flight log with altitude, speeds, GPS, battery</div>
+              <button class="btn-tactical btn-outline btn-sm btn-load-sample" data-sample="telemetry_mission_lekki_perimeter.csv">+ Stage Sample Telemetry</button>
+            </div>
+
+            <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
+              <div style="font-weight:600; color:#fff; font-size:13px;">incidents_lekki_perimeter.csv</div>
+              <div style="font-size:11px; color:#94a3b8; margin:4px 0 8px;">Manual incident log (Perimeter breach & thermal hotspot)</div>
+              <button class="btn-tactical btn-outline btn-sm btn-load-sample" data-sample="incidents_lekki_perimeter.csv">+ Stage Sample Incidents</button>
+            </div>
+
+            <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
+              <div style="font-weight:600; color:#fff; font-size:13px;">planned_route_lekki_corridor.geojson</div>
+              <div style="font-size:11px; color:#94a3b8; margin:4px 0 8px;">Planned corridor boundary geometry (EPSG:4326)</div>
+              <button class="btn-tactical btn-outline btn-sm btn-load-sample" data-sample="planned_route_lekki_corridor.geojson">+ Stage Planned Corridor</button>
+            </div>
+
+            <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:8px; padding:12px;">
+              <div style="font-weight:600; color:#ff6b7a; font-size:13px;">corrupted_sample_for_qa_testing.csv</div>
+              <div style="font-size:11px; color:#94a3b8; margin:4px 0 8px;">Contains invalid lat 195°, time jump, 550mph glitch (Tests Quarantine)</div>
+              <button class="btn-tactical btn-danger btn-sm btn-load-sample" data-sample="corrupted_sample_for_qa_testing.csv">+ Test Quarantine Engine</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload History Table -->
+        <div class="tactical-panel">
+          <div class="panel-header-hud">
+            <div class="panel-title-wrap">
+              <h3>Ingestion Batch History</h3>
+              <span class="panel-tag">AUDITABLE</span>
+            </div>
+          </div>
+          <div class="tactical-table-wrap">
+            <table class="tactical-table">
+              <thead>
+                <tr>
+                  <th>Batch ID</th>
+                  <th>Files Included</th>
+                  <th>Total Files</th>
+                  <th>Upload Timestamp</th>
+                  <th>Validation Outcome</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="upload-history-table-body">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 4: Data Quality & QA -->
+      <section id="view-data-quality" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Data Quality & Canonical Lineage Engine</h2>
+            <p style="font-size:13px; color:#94a3b8;">7-dimensional quality assessment, row-level error inspector, and canonical transformation pipeline.</p>
+          </div>
+        </div>
+
+        <!-- Active File Quality Overview Header -->
+        <div class="tactical-panel" id="data-quality-file-header">
+          <div style="color:#64748b; padding:20px; text-align:center;">Select an uploaded file from the Batch Upload tab to inspect its quality report.</div>
+        </div>
+
+        <!-- Detailed Row-Level Issues Inspector -->
+        <div class="tactical-panel">
+          <div class="panel-header-hud">
+            <div class="panel-title-wrap">
+              <h3>Granular Validation Issues & Diagnostics</h3>
+              <span class="panel-tag">ROW-LEVEL TRACEABILITY</span>
+            </div>
+          </div>
+          <div class="tactical-table-wrap">
+            <table class="tactical-table">
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>Quality Dimension</th>
+                  <th>Location</th>
+                  <th>Validation Message</th>
+                  <th>Recommended Resolution</th>
+                </tr>
+              </thead>
+              <tbody id="quality-issues-table-body">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Raw Sample Records Inspection -->
+        <div class="tactical-panel">
+          <div class="panel-header-hud">
+            <div class="panel-title-wrap">
+              <h3>Parsed Source Records Sample</h3>
+              <span class="panel-tag">FIRST 8 ROWS</span>
+            </div>
+          </div>
+          <div class="tactical-table-wrap">
+            <table class="tactical-table">
+              <thead id="raw-records-sample-head"></thead>
+              <tbody id="raw-records-sample-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 5: Findings & Review Workbench -->
+      <section id="view-findings-review" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Operational Findings & Review Workbench</h2>
+            <p style="font-size:13px; color:#94a3b8;">Human-in-the-loop review for security supervisors. Verify observations, escalate threats, and inspect optical/thermal evidence.</p>
+          </div>
+        </div>
+
+        <div id="findings-list-container">
+          <!-- Populated by findingsReview.js -->
+        </div>
+      </section>
+
+      <!-- View 6: AI Operational Intelligence -->
+      <section id="view-ai-intelligence" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Evidence-Grounded AI Operational Explanations</h2>
+            <p style="font-size:13px; color:#94a3b8;">Module F: Structured intelligence explanations derived strictly from deterministic calculations and linked evidence records.</p>
+          </div>
+        </div>
+
+        <div id="ai-explanation-content">
+          <!-- Populated by aiExplanation.js -->
+        </div>
+      </section>
+
+      <!-- View 7: Report Builder -->
+      <section id="view-reports" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;" class="report-actions-bar">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Executive Security Intelligence Reports</h2>
+            <p style="font-size:13px; color:#94a3b8;">Multi-stage approval workflow (Draft → Validation → Review → Approved → Published) and printable PDF export.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button id="btn-print-report-pdf" class="btn-tactical btn-primary-cyan btn-sm">
+              <svg style="width:14px; height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Print / Export PDF
+            </button>
+            <button id="btn-export-report-csv" class="btn-tactical btn-outline btn-sm">
+              Export CSV Summary
+            </button>
+          </div>
+        </div>
+
+        <!-- Approval Workflow Action Bar -->
+        <div class="tactical-panel report-actions-bar" id="report-approval-action-bar">
+          <!-- Populated by reportBuilder.js -->
+        </div>
+
+        <!-- Printable Document Body -->
+        <div class="report-document-container" id="report-document-body">
+          <!-- Populated by reportBuilder.js -->
+        </div>
+      </section>
+
+      <!-- View 8: Tamper-Evident Audit Trail -->
+      <section id="view-audit-trail" class="view-content-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h2 style="font-size:22px; font-weight:700; color:#fff;">Tamper-Evident Cryptographic Audit Trail</h2>
+            <p style="font-size:13px; color:#94a3b8;">Immutable SHA-256 event chaining logging all state changes, uploads, review decisions, and report approvals.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button id="btn-verify-audit-chain" class="btn-tactical btn-success btn-sm">
+              Verify Cryptographic Seal
+            </button>
+            <button id="btn-export-audit-csv" class="btn-tactical btn-outline btn-sm">
+              Export Audit CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="tactical-panel">
+          <div class="panel-header-hud">
+            <div class="panel-title-wrap">
+              <h3>Immutable Cryptographic Ledger</h3>
+              <span class="panel-tag">APPEND-ONLY</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <label style="font-family:var(--font-mono); font-size:11px; color:#94a3b8;">Filter Action:</label>
+              <select id="audit-action-filter" style="background:#0c121d; color:#00f0ff; border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:4px 8px; font-family:var(--font-mono); font-size:11px;">
+                <option value="">All Actions</option>
+                <option value="SYSTEM_INITIALIZATION">SYSTEM_INITIALIZATION</option>
+                <option value="USER_ROLE_SWITCH">USER_ROLE_SWITCH</option>
+                <option value="BATCH_DATA_UPLOAD">BATCH_DATA_UPLOAD</option>
+                <option value="REVIEW_FINDING_DECISION">REVIEW_FINDING_DECISION</option>
+                <option value="REPORT_APPROVAL_TRANSITION">REPORT_APPROVAL_TRANSITION</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tactical-table-wrap">
+            <table class="tactical-table">
+              <thead>
+                <tr>
+                  <th>Event ID</th>
+                  <th>Timestamp (UTC)</th>
+                  <th>Actor</th>
+                  <th>Action Type</th>
+                  <th>Resource Affected</th>
+                  <th>SHA-256 Event Hash</th>
+                </tr>
+              </thead>
+              <tbody id="audit-events-table-body">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal 1: Interactive RBAC Role Switcher -->
+  <div id="role-switch-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Switch RBAC Organizational Role</h3>
+        <button class="modal-close-btn" onclick="navigation.closeModal('role-switch-modal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12.5px; color:#94a3b8;">
+          Select any of the 8 defined organizational roles to evaluate permissions, dashboard capabilities, upload restrictions, review queues, and report approval privileges:
+        </p>
+        <div id="role-switch-list" style="display:flex; flex-direction:column; gap:10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Cryptographic Seal Verification Modal -->
+  <div id="seal-verify-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Cryptographic Ledger Seal Checkpoint</h3>
+        <button class="modal-close-btn" onclick="navigation.closeModal('seal-verify-modal')">✕</button>
+      </div>
+      <div class="modal-body" id="seal-verify-details"></div>
+      <div class="modal-footer">
+        <button class="btn-tactical btn-outline btn-sm" onclick="navigation.closeModal('seal-verify-modal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Finding Decision Action Modal -->
+  <div id="finding-decision-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Record Human-in-the-Loop Review Decision</h3>
+        <button class="modal-close-btn" onclick="navigation.closeModal('finding-decision-modal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:12px; font-weight:600; color:#fff;">Review Decision:</label>
+          <select id="review-decision-select" style="background:#0c121d; color:#fff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 12px; font-family:var(--font-sans); font-size:13px;">
+            <option value="Accept">Accept as Verified Observation</option>
+            <option value="Confirmed Threat">Escalate to Confirmed Threat</option>
+            <option value="Reject">Reject (Classify as False Alarm)</option>
+            <option value="Request More Evidence">Request Additional Drone Reconnaissance Evidence</option>
+          </select>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:10px;">
+          <label style="font-size:12px; font-weight:600; color:#fff;">Substantive Review Rationale (Required for Audit):</label>
+          <textarea id="review-rationale-input" rows="4" style="background:#0c121d; color:#fff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:10px; font-family:var(--font-sans); font-size:13px;" placeholder="Document analytical justification, ground corroboration, or interdiction directives..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-tactical btn-outline btn-sm" onclick="navigation.closeModal('finding-decision-modal')">Cancel</button>
+        <button id="submit-review-decision-btn" class="btn-tactical btn-primary-cyan btn-sm">Confirm Decision</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Evidence Photo Full Zoom Modal -->
+  <div id="evidence-zoom-modal" class="modal-overlay">
+    <div class="modal-box" style="max-width:920px; background:#000;">
+      <div class="modal-header" style="border-bottom-color:#222;">
+        <h3>Captured Drone Sensor Evidence Inspection</h3>
+        <button class="modal-close-btn" onclick="navigation.closeModal('evidence-zoom-modal')">✕</button>
+      </div>
+      <div class="modal-body" style="padding:10px; text-align:center;">
+        <img id="evidence-zoomed-img" src="" style="max-width:100%; max-height:75vh; border-radius:6px; object-fit:contain;" alt="Zoomed Evidence" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Drosia Modules -->
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/components/navigation.js"></script>
+  <script src="js/components/dashboard.js"></script>
+  <script src="js/components/tacticalMap.js"></script>
+  <script src="js/components/uploader.js"></script>
+  <script src="js/components/dataQuality.js"></script>
+  <script src="js/components/findingsReview.js"></script>
+  <script src="js/components/reportBuilder.js"></script>
+  <script src="js/components/auditTrail.js"></script>
+  <script src="js/components/aiExplanation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
